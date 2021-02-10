@@ -12,8 +12,9 @@ class TestUtils(unittest.TestCase):
         self.assertFalse(utils.fact(-4))
     
     def test_roots(self):
-        # À compléter...
-        pass
+        self.assertEqual(utils.roots(1, 0, 1), ())
+        self.assertEqual(utils.roots(1, 1, 0), (0, -1))
+        self.assertEqual(utils.roots(1, 0, 0), (0))
     
     def test_integrate(self):
         # À compléter...

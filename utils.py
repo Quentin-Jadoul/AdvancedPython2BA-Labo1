@@ -6,10 +6,6 @@ import math
 from math import sqrt
 
 def fact(n):
-	try:
-		return math.factorial(n)
-	except ValueError:
-		return False
 
 	"""Computes the factorial of a natural number.
 	
@@ -18,6 +14,11 @@ def fact(n):
 	Throws: ValueError if n < 0
 	"""
 
+	try:
+		return math.factorial(n)
+	except ValueError:
+		return False
+
 def roots(a, b, c):
 	"""Computes the roots of the ax^2 + bx + x = 0 polynomial.
 	
@@ -25,7 +26,18 @@ def roots(a, b, c):
 	Post: Returns a tuple with zero, one or two elements corresponding
 		to the roots of the ax^2 + bx + c polynomial.
 	"""
-	pass
+
+	delta = b**2 - 4*a*c
+
+	if (delta < 0):
+		return()
+	elif (delta == 0):
+		x = -b / (2*a)
+		return(x)
+	else:
+		x1 = (-b + sqrt(delta)) / (2*a)
+		x2 = (-b - sqrt(delta)) / (2*a)
+		return (x1,x2)
 
 def integrate(function, lower, upper):
 	"""Approximates the integral of a fonction between two bounds

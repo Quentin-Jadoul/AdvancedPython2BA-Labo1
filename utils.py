@@ -2,15 +2,21 @@
 # Math library
 # Author: Sébastien Combéfis
 # Version: February 8, 2018
+import math
+from math import sqrt
 
 def fact(n):
+	try:
+		return math.factorial(n)
+	except ValueError:
+		return False
+
 	"""Computes the factorial of a natural number.
 	
 	Pre: -
 	Post: Returns the factorial of 'n'.
 	Throws: ValueError if n < 0
 	"""
-	pass
 
 def roots(a, b, c):
 	"""Computes the roots of the ax^2 + bx + x = 0 polynomial.
